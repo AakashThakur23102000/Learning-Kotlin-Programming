@@ -1,0 +1,48 @@
+Category,React Native (JSX),Jetpack Compose (Kotlin),Description
+Text Elements,<Text>Hello</Text>,"Text(text = ""Hello"")",Displays simple text
+Text Elements,"<Text style={{ fontWeight: ""bold"" }}>Bold</Text>","Text(text = ""Bold"", fontWeight = FontWeight.Bold)",Bold text
+Text Elements,"<Text style={{ fontStyle: ""italic"" }}>Italic</Text>","Text(text = ""Italic"", fontStyle = FontStyle.Italic)",Italicized text
+Text Elements,"<Text style={{ textDecorationLine: ""underline"" }}>Underlined</Text>","Text(text = ""Underlined"", textDecoration = TextDecoration.Underline)",Underlined text
+Text Elements,"<Text style={{ textDecorationLine: ""line-through"" }}>Strikethrough</Text>","Text(text = ""Strikethrough"", textDecoration = TextDecoration.LineThrough)",Strikethrough text
+Text Elements,"<Text style={{ color: ""red"" }}>Red Text</Text>","Text(text = ""Red Text"", color = Color.Red)",Colored text
+Text Elements,<Text style={{ fontSize: 24 }}>Big</Text>,"Text(text = ""Big"", fontSize = 24.sp)",Large text
+Text Elements,"<Text style={{ textAlign: ""center"" }}>Centered</Text>","Text(text = ""Centered"", textAlign = TextAlign.Center)",Centered text
+Text Elements,"<Text style={{ textAlign: ""right"" }}>Right</Text>","Text(text = ""Right"", textAlign = TextAlign.Right)",Right-aligned text
+Text Elements,<Text selectable={true}>Selectable</Text>,"SelectionContainer { Text(""Selectable"") }",Selectable text
+,,,
+Text Input Elements,<TextInput value={text} onChangeText={setText} />,"TextField(value = text, onValueChange = { setText(it) })",Basic input field
+Text Input Elements,<TextInput secureTextEntry={true} />,"TextField(value = text, onValueChange = { setText(it) }, visualTransformation = PasswordVisualTransformation())",Password input field
+Text Input Elements,"<TextInput placeholder=""Enter name"" />","TextField(value = text, onValueChange = { setText(it) }, placeholder = { Text(""Enter name"") })",Input with placeholder
+Text Input Elements,"<TextInput keyboardType=""numeric"" />","TextField(value = text, onValueChange = { setText(it) }, keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number))",Numeric input field
+Text Input Elements,<TextInput multiline={true} />,"TextField(value = text, onValueChange = { setText(it) }, singleLine = false)",Multi-line input field
+,,,
+List Elements,<FlatList data={data} renderItem={...} />,LazyColumn { items(data) { ... } },List of items
+List Elements,<SectionList sections={sections} renderItem={...} />,LazyColumn { items(sections) { ... } },Sectioned list
+,,,
+Scrollable Elements,<ScrollView></ScrollView>,LazyColumn { },Scrollable list
+Scrollable Elements,<FlatList horizontal={true} />,LazyRow { items(data) { ... } },Horizontal scrollable list
+,,,
+Layout Elements,<View>...</View>,Box { ... },Basic container
+Layout Elements,"<View style={{ flexDirection: ""row"" }}>...</View>",Row { ... },Horizontal layout
+Layout Elements,"<View style={{ flexDirection: ""column"" }}>...</View>",Column { ... },Vertical layout
+,,,
+Button Elements,"<Button title=""Click"" onPress={handleClick} />","Button(onClick = { handleClick() }) { Text(""Click"") }",Basic button
+Button Elements,<TouchableOpacity onPress={handleClick}><Text>Press</Text></TouchableOpacity>,"Clickable(onClick = { handleClick() }) { Text(""Press"") }",Custom button
+Button Elements,<Pressable onPress={handleClick}><Text>Press</Text></Pressable>,Modifier.clickable { handleClick() },Pressable element
+Button Elements,"<Button title=""Click"" onPress={handleClick} disabled={true} />","Button(onClick = { handleClick() }, enabled = false) { Text(""Click"") }",Disabled button
+,,,
+Progress Indicators,"<ActivityIndicator size=""large"" />",CircularProgressIndicator(),Circular progress indicator
+Progress Indicators,<ProgressBar progress={0.5} />,LinearProgressIndicator(progress = 0.5f),Linear progress bar
+,,,
+Image & Media Elements,"<Image source={{ uri: ""image_url"" }} />","Image(painter = rememberImagePainter(""image_url""), contentDescription = ""Image"")",Remote image
+Image & Media Elements,"<Image source={require(""./image.png"")} />","Image(painter = painterResource(R.drawable.image), contentDescription = ""Local Image"")",Local image
+Image & Media Elements,"<ImageBackground source={{ uri: ""bg_image"" }}>...</ImageBackground>",Box(modifier = Modifier.background(painterResource(R.drawable.bg_image))),Image background
+,,,
+Form & Selection Elements,<Switch value={isOn} onValueChange={setIsOn} />,"Switch(checked = isOn, onCheckedChange = { setIsOn(it) })",Toggle switch
+Form & Selection Elements,<CheckBox value={checked} onValueChange={setChecked} />,"Checkbox(checked = checked, onCheckedChange = { setChecked(it) })",Checkbox
+Form & Selection Elements,"<RadioButton value=""option1"" />","RadioButton(selected = option1Selected, onClick = { option1Selected = true })",Radio button
+Form & Selection Elements,<Slider value={sliderValue} onValueChange={setSliderValue} />,"Slider(value = sliderValue, onValueChange = { setSliderValue(it) })",Slider input
+,,,
+Modals & Dialogs,<Modal visible={isVisible} />,AlertDialog(onDismissRequest = { }),Modal dialog box
+Modals & Dialogs,<ActionSheet />,"DropdownMenu(expanded = true, onDismissRequest = { })",Dropdown menu
+Modals & Dialogs,"ToastAndroid.show(""Hello"", ToastAndroid.SHORT)","Toast.makeText(context, ""Hello"", Toast.LENGTH_SHORT).show()",Android toast notification
