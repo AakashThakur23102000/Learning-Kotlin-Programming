@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.unitconverter"
+    namespace = "com.dexterverse.unitconverter"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.unitconverter"
+        applicationId = "com.dexterverse.unitconverter"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
